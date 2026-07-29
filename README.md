@@ -7,7 +7,7 @@ to you — but not at a metronome's pace. Veloce slows down at commas, holds a
 beat at paragraph breaks, gives long words the time they need, and speeds through
 the little connective tissue your brain barely registers anyway.
 
-[Try it](https://quitebeyond.com/veloce) · [Report a bug](https://github.com/ad2003/VELOCE-SpeedReader/issues) · GPLv3
+[Try it](https://ad2003.github.io/VELOCE-SpeedReader/) · [Report a bug](https://github.com/ad2003/VELOCE-SpeedReader/issues) · GPLv3
 
 ---
 
