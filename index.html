@@ -16,7 +16,7 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-  Source: https://github.com/ad2003/veloce
+  Source: https://github.com/ad2003/VELOCE-SpeedReader
 -->
 <html lang="en">
 <head>
@@ -119,6 +119,15 @@ header{display:flex;align-items:center;justify-content:space-between;padding:12p
 .drop-zone:hover,.drop-zone.dragover{border-color:var(--accent);transform:scale(1.01)}.drop-zone:hover::before,.drop-zone.dragover::before{opacity:1}
 .drop-zone-icon{font-size:2.5rem;margin-bottom:12px;opacity:.6}.drop-zone h3{font-size:1.05rem;margin-bottom:6px}.drop-zone p{font-size:.82rem;color:var(--text-muted)}.drop-zone input{display:none}
 .recent-books{width:100%;max-width:580px;flex:1 1 auto;min-height:0;display:flex;flex-direction:column}
+/* Welcome-Footer: Version + Quellcode-Link. Immer sichtbar, auch ohne
+   Lesehistorie — die Versionsanzeige im History-Footer erscheint erst,
+   wenn schon Buecher geoeffnet wurden. */
+.welcome-footer{flex-shrink:0;margin-top:auto;padding-top:8px;display:flex;align-items:center;gap:8px;font-size:.72rem;color:var(--text-dim);letter-spacing:.03em}
+.welcome-footer .wf-sep{opacity:.5}
+.welcome-footer a{display:inline-flex;align-items:center;gap:5px;color:var(--text-dim);text-decoration:none;padding:4px 8px;border-radius:var(--radius-sm);transition:color .2s,background .2s}
+.welcome-footer a:hover{color:var(--text);background:var(--bg-hover)}
+.welcome-footer svg{width:13px;height:13px;flex-shrink:0}
+@media(max-height:600px){.welcome-footer{display:none}}
 .recent-books-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-shrink:0}
 .recent-books-header h3{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-dim)}
 .sort-btns{display:flex;gap:4px}.sort-btn{padding:3px 8px;border-radius:4px;border:1px solid var(--border);background:transparent;color:var(--text-dim);font-size:.65rem;cursor:pointer;font-family:var(--font-ui);transition:all .15s}.sort-btn.active{border-color:var(--accent);color:var(--accent)}
@@ -1645,7 +1654,7 @@ body.landscape-mobile .reader-content{padding:6px 12px}
           <div class="ob-feat"><strong>🖤 OLED & 5 Themes</strong><span>True black OLED mode for AMOLED screens. Plus Dark, Light, Sepia, High Contrast and Soft themes.</span></div>
           <div class="ob-feat"><strong>🔤 Bionic Reading</strong><span>Bold word prefixes guide your eye to the recognition point of each word for faster scanning.</span></div>
           <div class="ob-feat"><strong>📚 All Major Formats</strong><span>Reads EPUB (with chapters), PDF, TXT, Markdown, HTML & FB2. Remembers your exact position per book — pick up exactly where you left off.</span></div>
-          <div class="ob-feat"><strong>🌐 100% Browser-based · Free</strong><span>No install, no account, no tracking. Runs entirely in your browser. Deep timing optimization for English & German — fully adaptive for any language. Presented by <a href="https://github.com/ad2003" target="_blank" style="color:var(--accent);text-decoration:none">quitebeyond</a> · <a href="https://github.com/ad2003" target="_blank" style="color:var(--text-muted);text-decoration:none">GitHub ↗</a></span></div>
+          <div class="ob-feat"><strong>🌐 100% Browser-based · Free</strong><span>No install, no account, no tracking. Runs entirely in your browser. Deep timing optimization for English & German — fully adaptive for any language. Presented by <a href="https://github.com/ad2003" target="_blank" style="color:var(--accent);text-decoration:none">quitebeyond</a> · <a href="https://github.com/ad2003/VELOCE-SpeedReader" target="_blank" rel="noopener" style="color:var(--text-muted);text-decoration:none">GitHub ↗</a></span></div>
         </div>
       </div>
       <div class="ob-section" style="margin-bottom:0">
@@ -1672,7 +1681,15 @@ body.landscape-mobile .reader-content{padding:6px 12px}
   <div class="recent-books" id="recentSection" style="display:none">
     <div class="recent-books-header"><h3>Recently Read</h3><div class="sort-btns"><button class="sort-btn active" data-sort="date">Date</button><button class="sort-btn" data-sort="title">A–Z</button><button class="sort-btn" data-sort="progress">Progress</button></div></div>
     <div class="recent-list" id="recentList"></div>
-    <div class="history-footer"><div class="history-footer-row"><span id="storageInfo"></span><button class="history-btn" id="btnClearHistory">Clear list</button></div><div class="history-footer-row"><button class="history-btn" id="btnExportBackup">⬇ Export backup</button><button class="history-btn" id="btnImportBackup">⬆ Import backup</button></div><div class="history-footer-row"><button class="history-btn" id="btnResetAllSettings">↺ Reset all settings</button><button class="history-btn danger" id="btnDeleteAllData">Delete all data</button></div><div class="history-footer-row" style="justify-content:center"><button class="history-btn" id="btnShowDebug" style="opacity:.5">🪲 Debug log</button></div><div class="history-footer-row" style="justify-content:center;opacity:.35;font-size:.68rem;letter-spacing:.04em">Veloce v<span id="versionDisplay"></span></div></div>
+    <div class="history-footer"><div class="history-footer-row"><span id="storageInfo"></span><button class="history-btn" id="btnClearHistory">Clear list</button></div><div class="history-footer-row"><button class="history-btn" id="btnExportBackup">⬇ Export backup</button><button class="history-btn" id="btnImportBackup">⬆ Import backup</button></div><div class="history-footer-row"><button class="history-btn" id="btnResetAllSettings">↺ Reset all settings</button><button class="history-btn danger" id="btnDeleteAllData">Delete all data</button></div><div class="history-footer-row" style="justify-content:center"><button class="history-btn" id="btnShowDebug" style="opacity:.5">🪲 Debug log</button></div><div class="history-footer-row" style="justify-content:center;opacity:.35;font-size:.68rem;letter-spacing:.04em">Veloce v<span id="versionDisplay" class="js-version"></span></div></div>
+  </div>
+  <div class="welcome-footer">
+    <span>Veloce v<span class="js-version"></span></span>
+    <span class="wf-sep">·</span>
+    <a href="https://github.com/ad2003/VELOCE-SpeedReader" target="_blank" rel="noopener" title="Source code on GitHub — GPLv3">
+      <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+      <span>Source</span>
+    </a>
   </div>
 </div>
 <!-- Hidden file input for backup import -->
@@ -2059,7 +2076,7 @@ hlFocusBorder:false,hlFocusBorderColor:'#ffffff',hlFocusBorderOpacity:35,hlStrea
 // Deep-clone helper (multipliers nested object must not be shared by reference)
 function _cloneDefaults(){return JSON.parse(JSON.stringify(DEFAULT_SETTINGS));}
 
-const VELOCE_VERSION='55.70';
+const VELOCE_VERSION='55.71';
 // ── Wake Lock: hält den Bildschirm an während aktives Lesen läuft ──
 let _wakeLock=null;
 async function _acquireWakeLock(){
@@ -4346,7 +4363,7 @@ function initEvents(){
     applyAllSettings();saveBookState();
     if(state.playing){_cancelLoop();scheduleNext();}
   });
-  const _vd=$('#versionDisplay');if(_vd)_vd.textContent=VELOCE_VERSION;
+  $$('.js-version').forEach(el=>{el.textContent=VELOCE_VERSION;});
   // ── Font-size stepper (replaces CSS-zoom) ──
   function _updateFontStepDisplay(){
     const v=state.settings.rsvpFontSize||48;
