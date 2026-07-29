@@ -1,4 +1,3 @@
-
 # Veloce
 
 **An RSVP speed reader that breathes with the text.**
@@ -304,7 +303,7 @@ Issues and pull requests welcome. Two things worth knowing:
 
 ## Licence and attribution
 
-Copyright © 2026 **quitebeyond** quitebeyond.com
+Copyright © 2026 **quitebeyond**
 
 Licensed under the **GNU General Public License v3.0 or later**. See
 [LICENSE](LICENSE).

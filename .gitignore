@@ -1,0 +1,9 @@
+node_modules/
+package-lock.json
+package.json
+
+# Build-Artefakte (werden per Release angehaengt, nicht versioniert)
+*.min.html
+
+.DS_Store
+Thumbs.db
