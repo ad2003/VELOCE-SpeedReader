@@ -10,7 +10,7 @@
  *   HTML -> stale-while-revalidate: sofortiger Start aus dem Cache, Update laeuft
  *     im Hintergrund und greift beim naechsten Oeffnen.
  */
-const VERSION = '55.70';
+const VERSION = '55.71';
 const SHELL = `veloce-shell-v${VERSION}`;
 const RUNTIME = `veloce-runtime-v${VERSION}`;
 
