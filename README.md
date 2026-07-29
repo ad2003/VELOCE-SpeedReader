@@ -7,7 +7,7 @@ to you — but not at a metronome's pace. Veloce slows down at commas, holds a
 beat at paragraph breaks, gives long words the time they need, and speeds through
 the little connective tissue your brain barely registers anyway.
 
-[Try it](#) · [Report a bug](https://github.com/ad2003/veloce/issues) · GPLv3
+[Try it](quitebeyond.com/veloce) · [Report a bug](https://github.com/ad2003//VELOCE-SpeedReader/issues) · GPLv3
 
 ---
 
@@ -258,7 +258,7 @@ from a CDN.
 ## Development
 
 ```bash
-git clone https://github.com/ad2003/veloce.git
+git clone https://github.com/ad2003//VELOCE-SpeedReader.git
 cd veloce
 python3 -m http.server 8000   # any static server; needed for the service worker
 ```
@@ -312,7 +312,7 @@ You may use, modify and redistribute this software, including commercially.
 In return, the GPL requires that:
 
 - **Attribution is preserved.** The copyright notice naming *quitebeyond* and
-  the link to https://github.com/ad2003/veloce must remain in any copy or
+  the link to https://github.com/ad2003/VELOCE-SpeedReader must remain in any copy or
   derivative. The notice is in the header of `index.html`; keep it there.
 - **Derivatives stay under the GPL.** If you distribute a modified version, it
   must be licensed under the GPLv3 or later and its source made available.
@@ -326,4 +326,4 @@ Third-party components and their licences are listed in
 
 ---
 
-<sub>Veloce — github.com/ad2003/veloce — by quitebeyond</sub>
+<sub>Veloce — github.com/ad2003/VELOCE-SpeedReader — by quitebeyond</sub>
